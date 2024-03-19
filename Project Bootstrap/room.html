@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .room-card {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding-bottom: 30px;
+        }
+
+        .room-card img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top shadow">
+        <div class="container-fluid col-md-10 my-3">
+            <a class="navbar-brand" href="#"><img src="img/Hotel.png" style="height: 50px; width: 260px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav fs-4 ms-auto">
+                    <a class="nav-link mt-1" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link mt-1" aria-current="page" href="home.html">About Us</a>
+                    <a class="nav-link active mt-1" aria-current="page" href="#">Rooms</a>
+                    <a class="nav-link mt-1" aria-current="page" href="gallery.html">Gallery</a>
+                    <a class="nav-link mt-1" aria-current="page" href="contact.html">Contact</a>
+                    <button class="btn btn-primary subscribe-btn mx-3"><a href="book.html" aria-current="page"
+                            class="text-white text-decoration-none mx-3 fs-4">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col text-center">
+                <div class="heading text-center text-primary text-decoration-none fs-1 mt-5 mb-3">
+                    <h1>Our <span>Rooms</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/room4.jpeg" alt="Standard" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Standard Room</h2>
+                    <p class="context mx-3 text-secondary">Embrace comfort in our inviting standard rooms, designed for both leisure and business travelers
+                        seeking a cozy retreat. Enjoy modern amenities and a relaxing ambiance, ensuring a restful stay
+                        after a day of exploration or work....</p>
+                    <p><b class="cost mx-3">Starting at $60 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="standard.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/suite.jpg" alt="Deluxe" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Deluxe Queen Room</h2>
+                    <p class="context mx-3 text-secondary">Experience luxury in our deluxe rooms. Thoughtfully designed with modern comforts and elegant
+                        décor, these spacious retreats offer a serene escape. Unwind in style and indulge in comfort....
+                    </p>
+                    <p><b class="cost mx-3">Starting at $85 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="deluxe_queen.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/room1.jpeg" alt="Executive" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Executive Room</h2>
+                    <p class="context mx-3 text-secondary">Experience sophistication and comfort in our executive rooms. Tailored for discerning travelers,
+                        these refined spaces offer modern amenities, and exclusive....</p>
+                    <p><b class="cost mx-3">Starting at $90 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="executive.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/room5.jpg" alt="Phewa suite" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Phewa suite Room</h2>
+                    <p class="context mx-3 text-secondary">Enjoy the convenience of separate living areas, stunning views, and premium furnishings, creating an oasis of
+                        relaxation and sophistication. Whether for leisure or business....</p>
+                    <p><b class="cost mx-3">Starting at $100 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="phewa_suite.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/smart twin room.jpg" alt="Deluxe twin room" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Deluxe Twin Room</h2>
+                    <p class="context mx-3 text-secondary">Discover comfort and convenience in our Deluxe Twin Rooms. Thoughtfully designed for your relaxation, these
+                        rooms offer spacious accommodation and modern amenities....</p>
+                    <p><b class="cost mx-3">Starting at $85 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="deluxe_twin.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="./img/room2.jpeg" alt="family" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Family Room</h2>
+                    <p class="context mx-3 text-secondary">Designed with families in mind, our spacious family rooms offer comfort and convenience for every member.
+                        Featuring ample space and thoughtful amenities, these rooms ensure an enjoyable stay....</p>
+                    <p><b class="cost mx-3">Starting at $80 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="family.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/room6.jpg" alt="Swiss" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Sarowar Select Room</h2>
+                    <p class="context mx-3 text-secondary">Indulge in luxury with our suites. Spaciously designed and elegantly appointed, our suites offer a refined
+                        escape, featuring modern amenities and exquisite comfort....</p>
+                    <p><b class="cost mx-3">Starting at $95 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="sarowar_select.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="room-card">
+                    <img src="img/superior queen room 2.jpg" alt="Superior" class="img-fluid">
+                    <h2 class="header fs-4 my-2 mx-3">Superior Twin Room</h2>
+                    <p class="context mx-3 text-secondary">Discover comfort and style in our Superior Twin Rooms, thoughtfully designed for your relaxation. Featuring a
+                        plush queen-sized bed and....</p>
+                    <p><b class="cost mx-3">Starting at $85 per night</b></p>
+                    <a href="book.html" class="btn btn-primary mx-3">Book Now</a>
+                    <a href="superior.html" class="btn btn-secondary">More Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-secondary text-white">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Information</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">About Us</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Customers</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Services</a></li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">News & Updates</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Media Kit</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">New Uploads</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Newsletter Signup</a></li>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Terms & Conditions</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Customer Agreement</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Security</a></li>
+                        <li><a href="#review" class="text-decoration-none text-white-50 fs-5">Testimonials</a></li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Newsletter</h5>
+
+                    <p class="text-white-50 fs-6">Subscribe To Our Newsletter For A Weekly Dose Of News, Updates, And
+                        Exclusive Offers.</p>
+                    <div class="newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary subscribe-btn" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            ©2023 Hotel SAROWAR. All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+</body>
+
+</html>

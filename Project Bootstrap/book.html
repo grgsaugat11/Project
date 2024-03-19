@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            background: url("img/background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .booking-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 100%;
+            max-width: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top shadow">
+        <div class="container-fluid col-md-10 my-3">
+            <a class="navbar-brand" href="#"><img src="img/Hotel.png" style="height: 50px; width: 260px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav fs-4 ms-auto">
+                    <a class="nav-link mt-1" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link mt-1" aria-current="page" href="home.html">About Us</a>
+                    <a class="nav-link mt-1" aria-current="page" href="room.html">Rooms</a>
+                    <a class="nav-link mt-1" aria-current="page" href="gallery.html">Gallery</a>
+                    <a class="nav-link mt-1" aria-current="page" href="contact.html">Contact</a>
+                    <button class="btn btn-primary subscribe-btn mx-3"><a href="#" aria-current="page"
+                            class="text-white text-decoration-none mx-3 fs-4">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="box">
+        <section class="booking-form" style="margin-top: 150px;">
+            <h2 class="text-primary text-center mb-4">Book a Room</h2>
+            <form id="booking-form" onsubmit="return validateForm()" method="post" action="addcustomersdata.php">
+
+                <label for="guest-name"><b>Guest Name:</b></label>
+                <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Your Name">
+                <span class="error" id="nameError"></span><br>
+
+                <label for="phone"><b>Phone:</b></label>
+                <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter Your Phone Number">
+                <span class="error" id="phoneError"></span><br>
+
+                <label for="guest-email"><b>Email:</b></label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="Enter Your Email Address">
+                <span class="error" id="emailError"></span><br>
+
+                <label for="check-in-date"><b>Check-in Date:</b></label>
+                <input type="date" class="form-control" id="checkindate" name="checkindate" required><br>
+
+                <label for="check-out-date"><b>Check-out Date:</b></label>
+                <input type="date" class="form-control" id="checkoutdate" name="checkoutdate" required><br>
+
+                <label for="room-type"><b>Room Type:</b></label>
+                <select id="roomtype" class="form-control mb-4" name="roomtype" required>
+                    <option value="Standard">Standard Room</option>
+                    <option value="Deluxe">Deluxe Room</option>
+                    <option value="Executive">Executive Room</option>
+                    <option value="Family">Family Room</option>
+                    <option value="Deluxe Twin">Deluxe Twin Room</option>
+                    <option value="Superior Queen">Superior Queen Room</option>
+                    <option value="Swiss Select">Swiss Select Room</option>
+                    <option value="Phewa Suite">Phewa Suite</option>
+                </select>
+
+                <label for="no-of-adult"><b>Adults:</b></label>
+                <input type="number" class="form-control" id="adults" name="adults" required><br>
+
+                <label for="no-of-children"><b>Children:</b></label>
+                <input type="number" class="form-control" id="children" name="children" required><br>
+
+                <div class="text-center">
+                    <button type="submit" onsubmit="done()" class="btn btn-primary btn-lg btn-block">BOOK</button>
+                </div>
+            </form>
+            <script>
+                function done(){
+                    alert("Booking Successful!!");
+                }
+            </script>
+            <script>
+                var date = new Date();
+                var tdate = date.getDate();
+                var month = date.getMonth();
+                tdate = tdate + 1;
+                month = month + 1;
+                if (tdate < 10) {
+                    tdate = '0' + month;
+                }
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                var year = date.getUTCFullYear();
+                var minDate = year + "-" + month + "-" + tdate;
+                document.getElementById("checkindate").setAttribute('min', minDate);
+                document.getElementById("checkoutdate").setAttribute('min', minDate);
+            </script>
+            <script>
+                function validateForm() {
+                    name = document.getElementById('name').value;
+                    phone = document.getElementById('phone').value;
+                    email = document.getElementById('email').value;
+
+                    nameError = document.getElementById('nameError');
+                    phoneError = document.getElementById('phoneError');
+                    emailError = document.getElementById('emailError');
+
+                    namePattern = /^[A-Za-z]{1,32}/;
+                    phonePattern = /^\d{10}$/;
+                    emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                    if (!name) {
+                        nameError.textContent = 'Please enter your phone number.';
+                    } else if (!namePattern.test(name)) {
+                        nameError.textContent = 'Note: Cannot include numbers in name.';
+                    } else {
+                        nameError.textContent = '';
+                    }
+
+                    if (!phone) {
+                        phoneError.textContent = 'Please enter your phone number.';
+                    } else if (!phonePattern.test(phone)) {
+                        phoneError.textContent = 'Note: A valid 10-digit phone number required.';
+                    } else {
+                        phoneError.textContent = '';
+                    }
+
+                    if (!email) {
+                        emailError.textContent = 'Please enter your email address.';
+                    } else if (!emailPattern.test(email)) {
+                        emailError.textContent = 'Note: A valid email address required.';
+                    } else {
+                        emailError.textContent = '';
+                    }
+
+                    return !(nameError.textContent || phoneError.textContent || emailError.textContent);
+                }
+            </script>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-secondary text-white">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Information</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">About Us</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Customers</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Services</a></li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">News & Updates</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Media Kit</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">New Uploads</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Newsletter Signup</a></li>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Terms & Conditions</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Customer Agreement</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50 fs-5">Security</a></li>
+                        <li><a href="#review" class="text-decoration-none text-white-50 fs-5">Testimonials</a></li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-4 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Newsletter</h5>
+
+                    <p class="text-white-50 fs-6">Subscribe To Our Newsletter For A Weekly Dose Of News, Updates, And
+                        Exclusive Offers.</p>
+                    <div class="newsletter">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary subscribe-btn" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            ©2023 Hotel SAROWAR. All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+</body>
+
+</html>
